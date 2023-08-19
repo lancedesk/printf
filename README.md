@@ -18,6 +18,10 @@ The project is organized into the following files:
 - `main.h`: Header file declaring the `_printf` function and related declarations.
 - `format_helpers.c`: Helper functions to handle different format specifiers.
 - `format_helpers.h`: Header file with declarations for format helper functions.
+- `_putchar.c`: Implementation of the _putchar function used to output characters.
+- `_puts.c`: Implementation of the _puts function used to output strings.
+- `format_getter.c`: Implementation of the format_getter function to retrieve format handlers.
+- `int_to_string.c`: Implementation of the int_to_string function for integer to string conversion.
 
 ---
 
