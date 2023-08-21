@@ -20,7 +20,7 @@ The project is organized into the following files:
 - `_putchar.c`: Implementation of the `_putchar` function used to output characters.
 - `_puts.c`: Implementation of the `_puts` function used to output strings.
 - `format_getter.c`: Implementation of the `format_getter` function to retrieve format handlers.
-- `_format_b.c: This file contains the implementation of the _format_b function, which handles the %b format specifier.
+- `_format_b.c`: This file contains the implementation of the _format_b function, which handles the %b format specifier.
 - `_format_c.c`: Implementation of the `_format_c` function for character formatting.
 - `_format_d.c`: Implementation of the `_format_d` function for integer formatting.
 - `_format_f.c`: Implementation of the `_format_f` function for floating-point formatting.
@@ -37,6 +37,6 @@ The project is organized into the following files:
 - `int_to_hex_string_ptr.c`: Implementation of the `int_to_hex_string_ptr` function for pointer address to hexadecimal string conversion.
 - `int_to_octal_string.c`: Implementation of the `int_to_octal_string` function for integer to octal string conversion.
 - `int_to_string_unsigned.c`: Implementation of the `int_to_string_unsigned` function for unsigned integer to string conversion.
-- `int_to_binary.c: This file implements the int_to_binary function, which converts an unsigned integer to its binary representation.
+- `int_to_binary.c`: This file implements the int_to_binary function, which converts an unsigned integer to its binary representation.
 
 **Note:** This project is for educational purposes and may not cover all edge cases and complexities of the standard `printf` function. It serves as an exercise in understanding string formatting and handling variable arguments in C.
