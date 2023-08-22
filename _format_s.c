@@ -18,6 +18,7 @@ int _format_s(va_list args)
 	if (str == NULL)
 	{
 		char *null_str = "(null)";
+
 		for (i = 0; null_str[i] != '\0'; i++)
 		{
 			_putchar(null_str[i]);
@@ -31,6 +32,5 @@ int _format_s(va_list args)
 		_putchar(str[i]);
 		length++;
 	}
-
 	return (length);
 }

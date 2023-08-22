@@ -1,6 +1,7 @@
 #include "main.h"
 
-/* int_to_string - Convert an integer
+/**
+ * int_to_string - Convert an integer
  * to a dynamically allocated string
  * @n: Integer to be converted
  *
@@ -48,5 +49,6 @@ char *int_to_string(int n, char *buffer)
 		}
 		buffer[length] = '\0';
 	}
+
 	return (buffer);
 }

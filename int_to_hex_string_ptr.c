@@ -23,6 +23,7 @@ char *int_to_hex_string_ptr(void *ptr, char *buffer)
 	else
 	{
 		unsigned long temp = n;
+
 		while (temp != 0)
 		{
 			temp >>= 4;
@@ -30,8 +31,7 @@ char *int_to_hex_string_ptr(void *ptr, char *buffer)
 		}
 	}
 	/* Allocate memory for the buffer */
-	/* Include space for "0x" prefix */
-	/* and null terminator */
+	/* Include space for "0x" prefix & '\0'*/
 	buffer = (char *)malloc((length + 3));
 
 	if (buffer == NULL)
