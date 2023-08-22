@@ -32,6 +32,7 @@ int (*format_getter(char s))(va_list)
 		{ 'o', _format_o },  /* Handler for %o format specifier */
 		{ 'p', _format_p },  /* Handler for %p format specifier */
 		{ 's', _format_s },  /* Handler for %s format specifier */
+		{ 'S', _format_S },  /* Handler for %S format specifier */
 		{ 'u', _format_u },  /* Handler for %u format specifier */
 		{ 'x', _format_x },  /* Handler for %x format specifier */
 		{ 'X', _format_X },  /* Handler for %X format specifier */
