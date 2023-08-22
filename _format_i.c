@@ -10,15 +10,14 @@
 
 int _format_i(va_list args)
 {
-	int n = va_arg(args, int);
+	long int n = va_arg(args, long int);
 	int res = 0;
 
 	if (n == INT_MIN)
 	{
 		_putchar('-');
 		res++;
-		/* Convert INT_MIN to positive without sign */
-		n = -(n + 1);
+		n = -(long int)(n + 1);
 	}
 
 	if (n < 0)
@@ -29,8 +28,7 @@ int _format_i(va_list args)
 	}
 
 	/* Output each digit of the number */
-	print_number(n, &res);
+	print_number((int)n, &res);
 
 	return (res);
 }
-
