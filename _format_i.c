@@ -1,7 +1,8 @@
 #include "main.h"
 #include "format_helpers.h"
 
-/* _format_i - Handle the %i format specifier
+/**
+ * _format_i - Handle the %i format specifier
  * @args: Integer to be printed
  *
  * Return: The number of characters printed

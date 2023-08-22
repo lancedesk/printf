@@ -10,7 +10,8 @@
 
 int _format_c(va_list args)
 {
-	char c = va_arg(args, int); 
+	char c = va_arg(args, int);
+
 	_putchar(c);
 
 	/* Chars like '%c' always print one character */

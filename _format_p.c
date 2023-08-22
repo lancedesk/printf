@@ -1,7 +1,8 @@
 #include "main.h"
 #include "format_helpers.h"
 
-/* _format_p - Handle the %p format specifier
+/**
+ * _format_p - Handle the %p format specifier
  * @args: Pointer address to be printed
  *
  * Return: The number of characters printed

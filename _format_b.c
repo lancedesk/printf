@@ -17,7 +17,7 @@ int _format_b(va_list args)
 
 	num = va_arg(args, unsigned int);
 
-	// Assuming a 32-bit integer */
+	/* Assuming a 32-bit integer */
 	char buffer[32];
 
 	/* Implement int_to_binary function */

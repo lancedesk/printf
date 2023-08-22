@@ -35,6 +35,7 @@ char *int_to_binary(unsigned int n, char *buffer)
 	for (j = 0; j < len / 2; j++)
 	{
 		char temp = buffer[j];
+
 		buffer[j] = buffer[len - j - 1];
 		buffer[len - j - 1] = temp;
 	}

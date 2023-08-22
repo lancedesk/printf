@@ -29,11 +29,9 @@ char *int_to_hex_string_ptr(void *ptr, char *buffer)
 			length++;
 		}
 	}
-
 	/* Allocate memory for the buffer */
 	/* Include space for "0x" prefix */
 	/* and null terminator */
-
 	buffer = (char *)malloc((length + 3));
 
 	if (buffer == NULL)
@@ -41,11 +39,9 @@ char *int_to_hex_string_ptr(void *ptr, char *buffer)
 		/* Handle memory allocation error */
 		exit(EXIT_FAILURE);
 	}
-
 	/* Add "0x" prefix to the buffer */
 	buffer[0] = '0';
 	buffer[1] = 'x';
-
 	/* Convert the hexadecimal value to a string */
 	for (i = length + 1; i >= 2; i--)
 	{
@@ -54,6 +50,5 @@ char *int_to_hex_string_ptr(void *ptr, char *buffer)
 		n >>= 4;
 	}
 	buffer[length + 2] = '\0';
-
 	return (buffer);
 }

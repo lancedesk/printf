@@ -24,15 +24,11 @@ char *int_to_string(int n, char *buffer)
 			length++;
 		}
 	}
-
 	buffer = (char *)malloc((length + 1));
-
 	if (buffer == NULL)
 	{
-		/* Handle memory allocation error */
-		exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE); /* Handle allocation error */
 	}
-
 	if (n == 0)
 	{
 		buffer[0] = '0';
@@ -40,14 +36,11 @@ char *int_to_string(int n, char *buffer)
 	}
 	else
 	{
-
 		if (n < 0)
 		{
 			buffer[0] = '-';
-			/* Convert to positive for processing */
-			n = -n;
+			n = -n; /* Convert to positive */
 		}
-
 		for (i = length - 1; i >= 0; i--)
 		{
 			buffer[i] = (n % 10) + '0';
@@ -55,6 +48,5 @@ char *int_to_string(int n, char *buffer)
 		}
 		buffer[length] = '\0';
 	}
-
 	return (buffer);
 }

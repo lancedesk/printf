@@ -1,7 +1,8 @@
 #include "main.h"
 #include "format_helpers.h"
 
-/* _format_f - Handle the %f format specifier
+/**
+ * _format_f - Handle the %f format specifier
  * @args: Floating-point number to be printed
  *
  * Return: The number of characters printed

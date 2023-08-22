@@ -35,7 +35,7 @@ int (*format_getter(char s))(va_list)
 		{ 'u', _format_u },  /* Handler for %u format specifier */
 		{ 'x', _format_x },  /* Handler for %x format specifier */
 		{ 'X', _format_X },  /* Handler for %X format specifier */
-		{ '%', _format_percent }/* Handler - % format specifier */
+		{ '%', _format_percent } /* Handle - % format specifier */
 	};
 
 	/* Size of the entire array */

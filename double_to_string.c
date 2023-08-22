@@ -20,7 +20,6 @@ char *double_to_string(double n, char *buffer)
 
 	/* Initialize integer_part */
 	integer_part = (int)n;
-
 	fractional_part = n - integer_part;
 	integer_part = (int)n;
 
@@ -28,36 +27,28 @@ char *double_to_string(double n, char *buffer)
 	buffer = int_to_string(integer_part, buffer);
 
 	length = strlen(buffer);
-
 	/* Add a '.' separator */
 	buffer[length] = '.';
 	length++;
 
 	/* Convert fractional part to string */
-
 	/* Keep 6 decimal places */
 	decimal_places = 6;
-
 	decimal_multiplier = 1.0;
 
 	for (i = 0; i < decimal_places; i++)
 	{
 		decimal_multiplier *= 10.0;
 	}
-
 	fractional_part_int = (int)(fractional_part * decimal_multiplier);
-
 	int_to_string(fractional_part_int, fractional_buffer);
-
 	/* Copy fractional part to the buffer */
 	for (i = 0; i < decimal_places; i++)
 	{
 		buffer[length] = fractional_buffer[i];
 		length++;
 	}
-
 	/* Null-terminate the string */
 	buffer[length] = '\0';
-
 	return (buffer);
 }

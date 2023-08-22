@@ -1,7 +1,8 @@
 #include "main.h"
 #include "format_helpers.h"
 
-/* _format_o - Handle the %o format specifier
+/**
+ * _format_o - Handle the %o format specifier
  * @args: Unsigned integer to be printed as octal
  *
  * Return: The number of characters printed

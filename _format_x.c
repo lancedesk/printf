@@ -1,7 +1,8 @@
 #include "main.h"
 #include "format_helpers.h"
 
-/* _format_x - Handle the %x format specifier
+/**
+ * _format_x - Handle the %x format specifier
  * @args: Unsigned integer to be printed
  * as lowercase hexadecimal
  *

@@ -1,7 +1,8 @@
 #include "main.h"
 #include "format_helpers.h"
 
-/* _format_u - Handle the %u format specifier
+/**
+ * _format_u - Handle the %u format specifier
  * @args: Unsigned integer to be printed
  *
  * Return: The number of characters printed
