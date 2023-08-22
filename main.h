@@ -9,6 +9,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+void print_number(int n, int *res);
 int _putchar(char c);
 void _puts(char *str);
 int _printf(const char *format, ...);

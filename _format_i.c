@@ -1,6 +1,9 @@
 #include "main.h"
 #include "format_helpers.h"
 
+/* Prototype for the print_number function */
+void print_number(int n, int *res);
+
 /**
  * _format_i - Handle the %i format specifier
  * @args: Integer to be printed
@@ -10,37 +13,20 @@
 
 int _format_i(va_list args)
 {
-	int n, i, length;
-	char *buffer;
+	int n = va_arg(args, int);
+	int res = 0;
 
-	n = va_arg(args, int);
-
-	/* Convert integer to string dynamically */
-	/* Pass NULL to get the length */
-	buffer = int_to_string(n, NULL);
-
-	/* Output the negative sign if */
-	/* the integer is negative */
+	/* Handle negative numbers and output the negative sign */
 	if (n < 0)
 	{
 		_putchar('-');
-		/* Account for the negative sign */
-		length = 1;
-	}
-	else
-	{
-		length = 0;
+		res++;
+		n = -n; /* Make n positive for further processing */
 	}
 
-	/* Output each character using _putchar */
-	for (i = 0; buffer[i] != '\0'; i++)
-	{
-		_putchar(buffer[i]);
-		length++;
-	}
+	/* Output each digit of the number */
+	print_number(n, &res);
 
-	/* Free the dynamically allocated memory */
-	free(buffer);
-
-	return (length);
+	return (res);
 }
+

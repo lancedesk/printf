@@ -1,8 +1,11 @@
 #include "main.h"
 #include "format_helpers.h"
 
+/* Prototype for the print_number function */
+void print_number(int n, int *res);
+
 /**
- *_format_d - Handle the %d format specifier
+ * _format_d - Handle the %d format specifier
  * @args: Integer to be printed
  *
  * Return: The number of characters printed
@@ -10,10 +13,8 @@
 
 int _format_d(va_list args)
 {
-	int n, i, length;
-	char *buffer;
-
-	n = va_arg(args, int);
+	int n = va_arg(args, int);
+	int res = 0;
 
 	if (n == 0)
 	{
@@ -21,26 +22,17 @@ int _format_d(va_list args)
 		return (1);
 	}
 
-	buffer = int_to_string(n, NULL);
-
+	/* Handle negative numbers and output the negative sign */
 	if (n < 0)
 	{
 		_putchar('-');
-		length = 1;
-	}
-	else
-	{
-		length = 0;
+		res++;
+		n = -n; /* Make n positive for further processing */
 	}
 
-	for (i = 0; buffer[i] != '\0'; i++)
-	{
-		_putchar(buffer[i]);
-		length++;
-	}
+	/* Output each digit of the number */
+	print_number(n, &res);
 
-	free(buffer);
-
-	return (length);
+	return (res);
 }
 
