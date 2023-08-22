@@ -9,39 +9,39 @@
 
 int _format_f(va_list args)
 {
-    double n;
-    int i, length;
-    char *buffer;
+	double n;
+	int i, length;
+	char *buffer;
 
-    n = va_arg(args, double);
+	n = va_arg(args, double);
 
-    /* Convert double to string dynamically */
-    /* Passing NULL to get the required length */
-    buffer = double_to_string(n, NULL);
-    
-    if (buffer == NULL)
-    {
-        /* Handle memory allocation failure */
-        return (-1);
-    }
+	/* Convert double to string dynamically */
+	/* Passing NULL to get the required length */
+	buffer = double_to_string(n, NULL);
 
-    /* Output the negative sign if the number is negative */
-    if (n < 0)
-    {
-        _putchar('-');
-    }
+	if (buffer == NULL)
+	{
+		/* Handle memory allocation failure */
+		return (-1);
+	}
 
-    /* Output each character using _putchar */
-    length = 0;
-    
-    for (i = 0; buffer[i] != '\0'; i++)
-    {
-        _putchar(buffer[i]);
-        length++;
-    }
+	/* Output the negative sign if the number is negative */
+	if (n < 0)
+	{
+		_putchar('-');
+	}
 
-    /* Free dynamically allocated memory */
-    free(buffer);
+	/* Output each character using _putchar */
+	length = 0;
 
-    return (length);
+	for (i = 0; buffer[i] != '\0'; i++)
+	{
+		_putchar(buffer[i]);
+		length++;
+	}
+
+	/* Free dynamically allocated memory */
+	free(buffer);
+
+	return (length);
 }

@@ -18,8 +18,8 @@
  * based on the encountered format specifier.
  */
 typedef struct {
-    char specifier;
-    int (*handler)(va_list);
+	char specifier;
+	int (*handler)(va_list);
 } FormatHandler;
 
 /* format_handlers - Array of FormatHandler structures

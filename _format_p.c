@@ -9,30 +9,30 @@
 
 int _format_p(va_list args)
 {
-  void *ptr;
-  char *buffer;
-  int i, length = 0;
+	void *ptr;
+	char *buffer;
+	int i, length = 0;
 
-  ptr = va_arg(args, void *);
+	ptr = va_arg(args, void *);
 
-  /* Convert pointer address to hexadecimal string dynamically */
-  buffer = int_to_hex_string_ptr(ptr, NULL);
+	/* Convert pointer address to hexadecimal string dynamically */
+	buffer = int_to_hex_string_ptr(ptr, NULL);
 
-  if (buffer == NULL)
-  {
-    /* Handle memory allocation failure */
-    return (-1);
-  }
+	if (buffer == NULL)
+	{
+		/* Handle memory allocation failure */
+		return (-1);
+	}
 
-  /* Output each character using _putchar */
-  for (i = 0; buffer[i] != '\0'; i++)
-  {
-    _putchar(buffer[i]);
-    length++;
-  }
+	/* Output each character using _putchar */
+	for (i = 0; buffer[i] != '\0'; i++)
+	{
+		_putchar(buffer[i]);
+		length++;
+	}
 
-  /* Free dynamically allocated memory */
-  free(buffer);
+	/* Free dynamically allocated memory */
+	free(buffer);
 
-  return (length);
+	return (length);
 }

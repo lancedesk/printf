@@ -10,11 +10,11 @@
 
 int _format_percent(va_list args)
 {
-  /* Since %% prints a single '%'*/
-  /* character, print it using _putchar */
+	/* Since %% prints a single '%'*/
+	/* character, print it using _putchar */
 
-  (void)args;
-  
-  _putchar('%');
-  return (1);
+	(void)args;
+
+	_putchar('%');
+	return (1);
 }

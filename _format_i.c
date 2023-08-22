@@ -9,37 +9,37 @@
 
 int _format_i(va_list args)
 {
-    int n, i, length;
-    char *buffer;
-  
-    n = va_arg(args, int);
+	int n, i, length;
+	char *buffer;
 
-    /* Convert integer to string dynamically */
-    /* Pass NULL to get the length */
-    buffer = int_to_string(n, NULL);
+	n = va_arg(args, int);
 
-    /* Output the negative sign if */
-    /* the integer is negative */
-    if (n < 0)
-    {
-        _putchar('-');
-        /* Account for the negative sign */
-        length = 1;
-    }
-    else
-    {
-        length = 0;
-    }
+	/* Convert integer to string dynamically */
+	/* Pass NULL to get the length */
+	buffer = int_to_string(n, NULL);
 
-    /* Output each character using _putchar */
-    for (i = 0; buffer[i] != '\0'; i++)
-    {
-        _putchar(buffer[i]);
-        length++;
-    }
+	/* Output the negative sign if */
+	/* the integer is negative */
+	if (n < 0)
+	{
+		_putchar('-');
+		/* Account for the negative sign */
+		length = 1;
+	}
+	else
+	{
+		length = 0;
+	}
 
-    /* Free the dynamically allocated memory */
-    free(buffer);
-  
-    return (length);
+	/* Output each character using _putchar */
+	for (i = 0; buffer[i] != '\0'; i++)
+	{
+		_putchar(buffer[i]);
+		length++;
+	}
+
+	/* Free the dynamically allocated memory */
+	free(buffer);
+
+	return (length);
 }

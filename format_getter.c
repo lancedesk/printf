@@ -20,43 +20,43 @@
 
 int (*format_getter(char s))(va_list)
 {
-    size_t i, format_length, handler_length;
+	size_t i, format_length, handler_length;
 
-  /* Define format_handlers array */
-FormatHandler format_handlers[] = {
-    { 'b', _format_b },  /* Handler for %b format specifier */
-    { 'c', _format_c },  /* Handler for %c format specifier */
-    { 'd', _format_d },  /* Handler for %d format specifier */
-    { 'f', _format_f },  /* Handler for %f format specifier */
-    { 'i', _format_i },  /* Handler for %i format specifier */
-    { 'o', _format_o },  /* Handler for %o format specifier */
-    { 'p', _format_p },  /* Handler for %p format specifier */
-    { 's', _format_s },  /* Handler for %s format specifier */
-    { 'u', _format_u },  /* Handler for %u format specifier */
-    { 'x', _format_x },  /* Handler for %x format specifier */
-    { 'X', _format_X },  /* Handler for %X format specifier */
-    { '%', _format_percent }/* Handler - % format specifier */
-};
-    
-    /* Size of the entire array */
-    format_length = sizeof(format_handlers);
+	/* Define format_handlers array */
+	FormatHandler format_handlers[] = {
+		{ 'b', _format_b },  /* Handler for %b format specifier */
+		{ 'c', _format_c },  /* Handler for %c format specifier */
+		{ 'd', _format_d },  /* Handler for %d format specifier */
+		{ 'f', _format_f },  /* Handler for %f format specifier */
+		{ 'i', _format_i },  /* Handler for %i format specifier */
+		{ 'o', _format_o },  /* Handler for %o format specifier */
+		{ 'p', _format_p },  /* Handler for %p format specifier */
+		{ 's', _format_s },  /* Handler for %s format specifier */
+		{ 'u', _format_u },  /* Handler for %u format specifier */
+		{ 'x', _format_x },  /* Handler for %x format specifier */
+		{ 'X', _format_X },  /* Handler for %X format specifier */
+		{ '%', _format_percent }/* Handler - % format specifier */
+	};
 
-    /* Size of first element in the array */
-    handler_length = sizeof(format_handlers[0]);
+	/* Size of the entire array */
+	format_length = sizeof(format_handlers);
 
-    /* Iterate through the format_handlers array */
-    for (i = 0; i <  format_length / handler_length; i++)
-    {
-        /* Check if the current specifier */
-        /* matches the input specifier */
-      
-        if (s == format_handlers[i].specifier)
-        {
-            /* Return the corresponding handler function */
-            return (format_handlers[i].handler);
-        }
-    }
-    
-    /* No matching specifier found, return NULL */
-    return (NULL);
+	/* Size of first element in the array */
+	handler_length = sizeof(format_handlers[0]);
+
+	/* Iterate through the format_handlers array */
+	for (i = 0; i <  format_length / handler_length; i++)
+	{
+		/* Check if the current specifier */
+		/* matches the input specifier */
+
+		if (s == format_handlers[i].specifier)
+		{
+			/* Return the corresponding handler function */
+			return (format_handlers[i].handler);
+		}
+	}
+
+	/* No matching specifier found, return NULL */
+	return (NULL);
 }
