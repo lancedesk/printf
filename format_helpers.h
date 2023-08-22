@@ -4,7 +4,7 @@
 #include <stdarg.h>
 
 /**
- * FormatHandler - Structure to hold a format specifier
+ * struct FormatProcessor - Structure to hold a format specifier
  * and its corresponding handler function
  * @specifier: The format specifier character
  * (e.g., 'd', 's', 'c')
@@ -17,22 +17,15 @@
  * It allows dynamic selection of a handler
  * based on the encountered format specifier.
  */
-typedef struct {
+
+struct FormatProcessor
+{
 	char specifier;
 	int (*handler)(va_list);
-} FormatHandler;
+};
 
-/* format_handlers - Array of FormatHandler structures
- *
- * This array holds FormatHandler structures that map format specifier characters
- * to their corresponding handler functions. When processing a format specifier
- * in the printf-like function, the appropriate handler function can be selected
- * using this array.
- *
- * The array is initialized with format specifier characters and their handler
- * function pointers (e.g., 'd' with _format_d). Additional entries can be added
- * to support more format specifiers.
- */
+
+typedef struct FormatProcessor FormatHandler;
 
 int _format_b(va_list args);
 int _format_c(va_list args);
@@ -59,4 +52,3 @@ extern FormatHandler format_handlers[];
 
 /* %li %%*/
 #endif
-
