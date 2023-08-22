@@ -19,6 +19,15 @@ int _format_d(va_list args)
 		return (1);
 	}
 
+	/* Handle INT_MIN as a special case */
+	if (n == INT_MIN)
+	{
+		_putchar('-');
+		res++;
+		/* Convert INT_MIN to positive without sign */
+		n = INT_MAX;
+	}
+
 	/* Handle negative numbers and output the negative sign */
 	if (n < 0)
 	{
@@ -32,5 +41,3 @@ int _format_d(va_list args)
 
 	return (res);
 }
-
-
