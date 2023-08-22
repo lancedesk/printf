@@ -1,9 +1,6 @@
 #include "main.h"
 #include "format_helpers.h"
 
-/* Prototype for the print_number function */
-void print_number(int n, int *res);
-
 /**
  * _format_i - Handle the %i format specifier
  * @args: Integer to be printed
@@ -16,7 +13,14 @@ int _format_i(va_list args)
 	int n = va_arg(args, int);
 	int res = 0;
 
-	/* Handle negative numbers and output the negative sign */
+	if (n == INT_MIN)
+	{
+		_putchar('-');
+		res++;
+		/* Convert INT_MIN to positive without sign */
+		n = -(n + 1);
+	}
+
 	if (n < 0)
 	{
 		_putchar('-');
