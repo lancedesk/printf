@@ -26,10 +26,18 @@ int _format_u(va_list args)
 	}
 
 	/* Output each character using _putchar */
-	for (i = 0; buffer[i] != '\0'; i++)
+	if (n == 0)
 	{
-		_putchar(buffer[i]);
+		_putchar('0');
 		length++;
+	}
+	else
+	{
+		for (i = 0; buffer[i] != '\0'; i++)
+		{
+			_putchar(buffer[i]);
+			length++;
+		}
 	}
 
 	/* Free dynamically allocated memory */
