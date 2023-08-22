@@ -15,10 +15,10 @@ int _format_b(va_list args)
 	int i, length;
 	unsigned int num;
 
-	num = va_arg(args, unsigned int);
-
 	/* Assuming a 32-bit integer */
 	char buffer[32];
+
+	num = va_arg(args, unsigned int);
 
 	/* Implement int_to_binary function */
 	int_to_binary(num, buffer);

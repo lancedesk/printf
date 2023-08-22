@@ -47,8 +47,16 @@ int _format_x(va_list args);
 int _format_X(va_list args);
 int _format_percent(va_list args);
 
+int handle_format_specifier(char specifier, va_list *arguments);
+int handle_valid_format(
+		int (*handler)(va_list),
+		va_list *arguments,
+		char specifier
+		);
+
 /* Declare format_handlers array */
 extern FormatHandler format_handlers[];
 
 /* %li %%*/
 #endif
+

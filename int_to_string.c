@@ -4,6 +4,7 @@
  * int_to_string - Convert an integer
  * to a dynamically allocated string
  * @n: Integer to be converted
+ * @buffer: Pointer to a character buffer to store the string
  *
  * Return: Pointer to the dynamically allocated string
  */
@@ -49,6 +50,5 @@ char *int_to_string(int n, char *buffer)
 		}
 		buffer[length] = '\0';
 	}
-
 	return (buffer);
 }
