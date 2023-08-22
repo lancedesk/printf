@@ -16,6 +16,15 @@ int _format_p(va_list args)
 
 	ptr = va_arg(args, void *);
 
+	/* Handle null pointer */
+	if (ptr == NULL)
+	{
+		/* Print (nil) */
+		_puts("(nil)");
+		/* Return 5 characters printed */
+		return (5);
+	}
+
 	/* Convert pointer address to hexadecimal string dynamically */
 	buffer = int_to_hex_string_ptr(ptr, NULL);
 
