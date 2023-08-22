@@ -17,7 +17,7 @@ int _format_u(va_list args)
 	n = va_arg(args, unsigned int);
 
 	/* Convert unsigned int to string dynamically */
-	buffer = int_to_string_unsigned(n, NULL);
+	buffer = int_to_string_u(n, NULL);
 
 	if (buffer == NULL)
 	{

@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * int_to_string_unsigned - Convert an unsigned integer
+ * int_to_string_u - Convert an unsigned integer
  * to a dynamically allocated string
  * @n: Unsigned integer value to be converted
  * @buffer: Pointer to the buffer for storing the string
@@ -16,7 +16,7 @@
  * the function exits with failure status.
  */
 
-char *int_to_string_unsigned(unsigned int n, char *buffer)
+char *int_to_string_u(unsigned int n, char *buffer)
 {
 	int length = 0, temp, i;
 

@@ -15,7 +15,7 @@ int _printf(const char *format, ...);
 int (*format_getter(char s))(va_list);
 char *int_to_string(int n, char *buffer);
 char *double_to_string(double n, char *buffer);
-char *int_to_string_unsigned(unsigned int n, char *buffer);
+char *int_to_string_u(unsigned int n, char *buffer);
 char *int_to_hex_string(unsigned int n, char *buffer);
 char *int_to_hex_string_ptr(void *ptr, char *buffer);
 char *int_to_octal_string(unsigned int n, char *buffer);
