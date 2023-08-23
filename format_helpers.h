@@ -49,6 +49,16 @@ int handle_valid_format(
 		char specifier
 		);
 
+int handle_format_string(const char *format, va_list *arguments);
+
+int handle_percent_format(
+	const char *format,
+	va_list *arguments,
+	unsigned int *index
+);
+
+int handle_format_specifier(char specifier, va_list *arguments);
+
 /* Declare format_handlers array */
 extern FormatHandler format_handlers[];
 

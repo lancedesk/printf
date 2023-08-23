@@ -19,42 +19,41 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i;
-	int printed_chars;
 	va_list arguments;
+	int printed_chars;
 
 	if (format == NULL)
-	{
 		return (-1); /* Return error for NULL format */
-	}
 
-	i = 0;
-	printed_chars = 0;
 	va_start(arguments, format);
+	printed_chars = handle_format_string(format, &arguments);
+	va_end(arguments);
+
+	return (printed_chars);
+}
+
+/**
+ * handle_format_string - Handles the entire format string
+ * @format: Format string containing the format specifiers
+ * @arguments: Pointer to the va_list containing the arguments
+ *
+ * Return: The number of characters printed
+ */
+
+int handle_format_string(const char *format, va_list *arguments)
+{
+	unsigned int i = 0;
+	int printed_chars = 0;
+
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			if (format[i] == '\0')
-			{
-				va_end(arguments);
 				return (-1); /* Return error for incomplete format specifier */
-			}
-			if (format[i] == ' ')
-			{
-				_putchar('%'); /* Handle case of '% ' (% followed by space) */
-				_putchar(' ');
-				printed_chars += 2;
-			}
-			else if (format[i] == 'r')
-			{
-				printed_chars += _format_r(arguments);
-			}
-			else
-			{
-				printed_chars += handle_format_specifier(format[i], &arguments);
-			}
+
+			printed_chars += handle_percent_format(&format[i], arguments, &i);
 		}
 		else
 		{
@@ -63,9 +62,47 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	va_end(arguments);
+
 	return (printed_chars);
 }
+
+/**
+ * handle_percent_format - Handles the format specifier starting with %
+ * @format: Pointer to the format string after '%'
+ * @arguments: Pointer to the va_list containing the arguments
+ * @index: Pointer to the current index in the format string
+ *
+ * Return: The number of characters printed for this format specifier
+ */
+
+int handle_percent_format(
+		const char *format,
+		va_list *arguments,
+		unsigned int *index
+		)
+{
+	int printed_chars = 0;
+
+	if (*format == ' ')
+	{
+		_putchar('%'); /* Handle case of '% ' (% followed by space) */
+		_putchar(' ');
+		printed_chars += 2;
+	}
+	else if (*format == 'r')
+	{
+		printed_chars += _format_r(*arguments);
+	}
+	else
+	{
+		printed_chars += handle_format_specifier(*format, arguments);
+	}
+
+	(*index)++; /* Move index to the next character after format specifier */
+
+	return (printed_chars);
+}
+
 
 /**
  * handle_format_specifier - Handle a format specifier
