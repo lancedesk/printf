@@ -45,7 +45,21 @@ int _printf(const char *format, ...)
 				return (-1);
 			}
 
-			printed_chars += handle_format_specifier(format[i], &arguments);
+			if (format[i] == ' ')
+			{
+				/* Handle case of '% ' (percentage followed by space) */
+				_putchar('%');
+				_putchar(' ');
+				printed_chars += 2;
+			}
+			else if (format[i] == 'r')
+			{
+				printed_chars += _format_r(arguments);
+			}
+			else
+			{
+				printed_chars += handle_format_specifier(format[i], &arguments);
+			}
 		}
 		else
 		{
@@ -124,4 +138,3 @@ int handle_format_specifier(char specifier, va_list *arguments)
 		return (handler(*arguments));
 	}
 }
-

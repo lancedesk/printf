@@ -34,6 +34,7 @@ int _format_f(va_list args);
 int _format_i(va_list args);
 int _format_o(va_list args);
 int _format_p(va_list args);
+int _format_r(va_list args);
 int _format_s(va_list args);
 int _format_S(va_list args);
 int _format_u(va_list args);
@@ -53,3 +54,4 @@ extern FormatHandler format_handlers[];
 
 /* %li %%*/
 #endif
+

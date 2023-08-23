@@ -31,6 +31,7 @@ int (*format_getter(char s))(va_list)
 		{ 'i', _format_i },  /* Handler for %i format specifier */
 		{ 'o', _format_o },  /* Handler for %o format specifier */
 		{ 'p', _format_p },  /* Handler for %p format specifier */
+		{ 'r', _format_r },  /* Handler for %r format specifier */
 		{ 's', _format_s },  /* Handler for %s format specifier */
 		{ 'S', _format_S },  /* Handler for %S format specifier */
 		{ 'u', _format_u },  /* Handler for %u format specifier */
@@ -61,3 +62,4 @@ int (*format_getter(char s))(va_list)
 	/* No matching specifier found, return NULL */
 	return (NULL);
 }
+
