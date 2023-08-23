@@ -17,3 +17,4 @@ void print_number(int n, int *res)
 	(*res)++;
 }
 
+

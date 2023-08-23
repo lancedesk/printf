@@ -35,3 +35,4 @@ int _format_s(va_list args)
 	return (length);
 }
 
+
