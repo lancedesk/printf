@@ -25,14 +25,12 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		/* Return error for NULL format */
-		return (-1);
+		return (-1); /* Return error for NULL format */
 	}
 
 	i = 0;
 	printed_chars = 0;
 	va_start(arguments, format);
-
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -41,14 +39,11 @@ int _printf(const char *format, ...)
 			if (format[i] == '\0')
 			{
 				va_end(arguments);
-				/* Return error for incomplete format specifier */
-				return (-1);
+				return (-1); /* Return error for incomplete format specifier */
 			}
-
 			if (format[i] == ' ')
 			{
-				/* Handle case of '% ' (percentage followed by space) */
-				_putchar('%');
+				_putchar('%'); /* Handle case of '% ' (% followed by space) */
 				_putchar(' ');
 				printed_chars += 2;
 			}
@@ -68,7 +63,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-
 	va_end(arguments);
 	return (printed_chars);
 }
